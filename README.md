@@ -32,6 +32,8 @@ Example:
 
 ---
 
+Project Link : https://vedantjadhav07.github.io/Computer-Algorithm/
+
 ## Algorithm
 **Greedy Approach:**
 1. Sort jobs in descending order of profit.  
