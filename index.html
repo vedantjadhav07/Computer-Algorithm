@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Job Sequencing Visualizer — Sort → Schedule</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <h1>Job Sequencing Visualizer — Sort → Schedule</h1>
+
+      <div class="controls">
+            <label>Manual Jobs (ID, Deadline, Profit per line):<br>
+                  <textarea id="manualJobInput" rows="4" cols="25"></textarea>
+                </label>
+            <button id="loadManualBtn">Load Jobs</button>
+        <button id="clearManualBtn">Clear</button>
+         
+    </div>
+
+      <div class="controls">
+            <label>Or Select Preset:</label>
+              <select id="jobSet">
+                    <option value="preset1" selected>Preset (Small)</option>
+                    <option value="preset2">Preset (Large)</option>
+                    <option value="random">Random</option>
+                  </select>
+            <button id="generateBtn">Load Preset/Random</button>
+          </div>
+
+      <div class="controls">
+            <label>Speed:
+                  <select id="speed">
+                <option value="700">Slow</option>
+                <option value="350" selected>Normal</option>
+                <option value="140">Fast</option>
+            </select>
+                </label>
+            <button id="playBtn">Play ▶</button>
+            <button id="pauseBtn" disabled>Pause ⏸</button>
+        <button id="stepFwdBtn">Step ➜</button>
+            <button id="stepBackBtn">Step ⬅</button>
+            <button id="resetBtn">Reset ↺</button>
+         
+    </div>
+     
+        <div id="visual" aria-live="polite"></div>
+
+      <div class="slots" id="slotsArea"></div>
+
+      <div class="info">
+            <div><strong>Current step:</strong> <span id="curOp">—</span></div>
+            <div><strong>Total profit:</strong> <span id="totalProfit">0</span></div>
+            <div class="legend">
+                  <div class="item">
+                <div class="colorBox cb-default"></div> Job (unscheduled)
+            </div>
+                  <div class="item">
+                <div class="colorBox cb-selected"></div> Selected / active
+            </div>
+                  <div class="item">
+                <div class="colorBox cb-scheduled"></div> Scheduled
+            </div>
+                  
+
+            <div style="margin-top:10px;">
+                  <label>Log:</label><br />
+                <textarea id="log" readonly></textarea>
+                </div>
+            <div class="status" id="status">Status: Ready</div>
+          </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

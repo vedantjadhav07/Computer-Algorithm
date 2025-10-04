@@ -1,0 +1,220 @@
+:root {
+    --bg: #0d1117;
+    --card: #161b26;
+    --muted: #8b95a1;
+    --panel: #1b1f2a;
+    --job-default: #22c55e;
+    --job-selected: #facc15;
+    --job-scheduled: #ef4444;
+    --compare: #3b82f6;
+    --swap: #c084fc;
+    --slot-free: #272c3c;
+}
+
+body {
+    margin: 18px;
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--bg);
+    color: #e6eef8;
+}
+
+h1 {
+    margin: 0 0 12px 0;
+    font-size: 22px;
+    text-align: center;
+    color: #f5f5f5;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+button,
+select,
+input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: #111827;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#visual {
+    background: #1b1f2a;
+    border-radius: 12px;
+    padding: 14px;
+    min-height: 140px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.job {
+    width: 120px;
+    min-height: 80px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #022;
+    background: var(--job-default);
+    transition: transform .18s, box-shadow .18s;
+    text-align: center;
+}
+
+.job.small {
+    font-size: 12px;
+}
+
+.job.compare {
+    outline: 3px solid var(--compare);
+    transform: scale(1.05);
+}
+
+.job.swap {
+    outline: 3px dashed var(--swap);
+    transform: scale(1.05);
+}
+
+.job.selected {
+    outline: 3px solid var(--job-selected);
+    transform: scale(1.06);
+}
+
+.job.scheduled {
+    outline: 3px solid var(--job-scheduled);
+    background: var(--job-scheduled);
+    color: #111;
+}
+
+.slots {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.slotContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100px;
+}
+
+.slotLabel {
+    min-height: 20px;
+    font-weight: 700;
+    color: #cfe9ff;
+}
+
+.slotBox {
+    width: 100px;
+    height: 60px;
+    border-radius: 10px;
+    background: var(--slot-free);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cfe9ff;
+    font-weight: 700;
+    transition: all .2s;
+}
+
+.info {
+    margin-top: 16px;
+    background: var(--panel);
+    padding: 14px;
+    border-radius: 12px;
+    color: #cfe9ff;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legend {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.legend .item {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.colorBox {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.cb-default {
+    background: var(--job-default);
+}
+
+.cb-selected {
+    background: var(--job-selected);
+}
+
+.cb-scheduled {
+    background: var(--job-scheduled);
+}
+
+.cb-compare {
+    background: var(--compare);
+}
+
+.cb-swap {
+    background: var(--swap);
+}
+
+textarea#log {
+    width: 780px;
+    height: 100px;
+    background: #1b1f2a;
+    color: #cfe9ff;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 6px;
+}
+
+.status {
+    margin-top: 12px;
+    color: var(--muted);
+    text-align: center;
+    font-weight: 600;
+}
+
+@media(max-width:700px) {
+    .job {
+        width: 90px
+    }
+
+    .slotContainer {
+        width: 70px
+    }
+}
